@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Background com GIF pixel art */
+.pixel-background {
+  background-image: url("/background.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.pixel-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 0;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* Design Angular - sem curvas */
+.angular-card {
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid #333;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.angular-header {
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+  background: linear-gradient(135deg, #ff6600 0%, #ff3300 50%, #cc0000 100%);
+}
+
+.angular-button {
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  background: linear-gradient(135deg, #ff6600 0%, #ff3300 100%);
+  border: 2px solid #cc0000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.angular-button:hover {
+  background: linear-gradient(135deg, #ff7700 0%, #ff4400 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.angular-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Ícones sem fundo branco */
+.icon-container {
+  background: transparent !important;
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+}
+
+.icon-container-gradient {
+  background: linear-gradient(135deg, #ff6600 0%, #ff3300 100%) !important;
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+}
+
+.icon-container-blue {
+  background: linear-gradient(135deg, #0066ff 0%, #0033cc 100%) !important;
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+}
+
+.icon-container-green {
+  background: linear-gradient(135deg, #00cc66 0%, #009944 100%) !important;
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+}
+
+/* Animação de onda de cores - versão angular */
+@keyframes colorWaveAngular {
+  0% {
+    background-position: 0% 50%;
+    transform: skewX(0deg);
+  }
+  25% {
+    background-position: 50% 0%;
+    transform: skewX(2deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: skewX(0deg);
+  }
+  75% {
+    background-position: 50% 100%;
+    transform: skewX(-2deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: skewX(0deg);
+  }
+}
+
+.color-wave-angular {
+  background-size: 400% 400%;
+  animation: colorWaveAngular 6s ease-in-out infinite;
+}
+
+/* Cores aleatórias para o header - versão angular */
+.random-color-1 {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+}
+
+.random-color-2 {
+  background: linear-gradient(45deg, #a8e6cf, #dcedc1, #ffd3a5, #fd9853, #ff6b6b);
+}
+
+.random-color-3 {
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe);
+}
+
+.random-color-4 {
+  background: linear-gradient(45deg, #43e97b, #38f9d7, #667eea, #764ba2, #f093fb);
+}
+
+.random-color-5 {
+  background: linear-gradient(45deg, #fa709a, #fee140, #43e97b, #38f9d7, #667eea);
+}
+
+.random-color-6 {
+  background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #a8edea, #fed6e3);
+}
+
+.random-color-7 {
+  background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f, #06ffa5, #1a73e8);
+}
+
+.random-color-8 {
+  background: linear-gradient(45deg, #e056fd, #686de0, #30336b, #130f40, #000000);
+}
+
+/* Efeitos simples para botões de ação */
+.action-button {
+  transition: all 0.3s ease;
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@400;700;900&display=swap");
+
+.ng-font {
+  font-family: "Bitcount Grid Single", monospace;
+}
+
+/* Efeito simples para cards de tarefa */
+.task-card {
+  transition: all 0.3s ease;
+  background: rgba(55, 65, 81, 0.95) !important;
+  backdrop-filter: blur(5px);
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background: rgba(75, 85, 99, 0.95) !important;
+}
+
+/* Melhor contraste para textos */
+.text-enhanced {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Timer display com melhor visibilidade */
+.timer-display {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: 2px solid;
+}

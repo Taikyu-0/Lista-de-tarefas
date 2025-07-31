@@ -1,0 +1,22 @@
+{
+  "name": "Lista do Rafa",
+  "short_name": "Lista Rafa",
+  "description": "Gerenciador de tarefas com cronômetro integrado",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/placeholder-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/placeholder-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
